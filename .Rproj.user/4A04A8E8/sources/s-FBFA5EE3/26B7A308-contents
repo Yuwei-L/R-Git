@@ -1,0 +1,6 @@
+exp <- function(x,y){
+          result = x^y
+          return(result)
+}
+
+exp(2,3)
