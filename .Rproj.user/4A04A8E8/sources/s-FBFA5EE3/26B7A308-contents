@@ -4,3 +4,11 @@ exp <- function(x,y){
 }
 
 exp(2,3)
+
+#Function application in Exercise 7: recency = difference between latest transaction and "today", frequency = number of transactions, monetary = average amount spent per transaction.
+rfm <- transactions[ ,list(recency = as.numeric(now - max(TransDate)),
+                           frequency = .N, 
+                           monetary = mean(PurchAmount)), 
+                     by=Customer]
+
+max(transactions[,TransDate]) #shows the latest date 
